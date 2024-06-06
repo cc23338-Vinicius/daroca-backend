@@ -1,0 +1,28 @@
+dotnet new webapi
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet tool install --global dotnet-ef
+dotnet ef
+
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+Fluent api
+Manipulação de entidades
+Usar o de cima pois o DataAnottations é mais limitado que esse tal de fluent api
+
+Model Objet:
+ ProductCategory
+    ProductCategoryId Int Pk
+    Name String 50
+ Product
+    ProductId int Pk
+    ProductCategoryId int
+    Name String 50 Req
+    UnitPrice decimal(11,5) Req
+ SalesOrder?
+    OrderId : int
+    CustomerId : int Req
+    OrderDate : DateTime Req
+    EstimatedDeliveryDate : date
+    Status : string req
